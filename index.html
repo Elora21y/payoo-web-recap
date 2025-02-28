@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo Website</title>
+    <!-- daisyUI cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- outfit font cnd link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .outfit {
+            font-family: "Outfit", serif;
+        }
+    </style>
+
+</head>
+
+<body class="outfit bg-slate-800">
+    <section class="bg-gray-100 min-h-screen max-w-md mx-auto py-5">
+        
+        <header class="">
+            <nav class="flex justify-center items-center relative mt-30">
+                <img src="assets/bg.png" alt="">
+                <img class="absolute -mt-40" src="assets/Group.png" alt="">
+            </nav>
+        </header>
+
+        <!-- login section -->
+        <div class=" bg-base-200 -mt-48">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+                <form class="card-body">
+                  <fieldset class="fieldset">
+
+                    <label class="fieldset-label text-slate-800 font-semibold">Mobile Number</label>
+                    <input id="account-number" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0" placeholder="Enter your number" value="01234567890" required/>
+
+                    <label class="fieldset-label text-slate-800 font-semibold">4 Digit Pin</label>
+                    <input id="pin-number" type="" class="input rounded-3xl text-xs bg-gray-100 border-0" placeholder="Enter 4 Digit Pin" value="1234" required />
+                    
+                    <button id="btn-login" class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl">Login</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <script src="script/login.js"></script>
+</body>
+
+</html>

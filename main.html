@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoo Website</title>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- daisyUI cdn link -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- outfit font cnd link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+    .outfit {
+      font-family: "Outfit", serif;
+    }
+  </style>
+</head>
+
+<body class="outfit bg-slate-800 ">
+  <section class="bg-white min-h-screen max-w-md mx-auto py-5 px-6">
+
+    <header class="flex justify-between">
+
+      <nav class="flex gap-2">
+        <img src="assets/Group.png" alt="" class="w-10">
+        <div class="">
+          <h2 class="text-2xl font-bold">$ <span id="main-balance">4500</span></h2>
+          <p class="text-gray-500">Available Balance</p>
+        </div>
+      </nav>
+
+      <button class="text-gray-500 btn bg-white"><i class="fa-solid fa-arrow-right-from-bracket "></i>Log Out</button>
+    </header>
+    <hr class="border border-gray-200 ">
+
+    <main>
+      <section class="my-6">
+        <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
+        <p class="text-gray-500">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+      </section>
+      <section class="mb-6">
+        <!-- cards -->
+        <div class="grid grid-cols-3 gap-2">
+          <!-- card 1 -->
+          <div id="add-money-box" class=" p-5 border-2 border-gray-200 rounded-lg">
+            <img src="assets/wallet1.png" alt="" class="mx-auto">
+            <p class="text-gray-500 text-center">Add Money</p>
+          </div>
+          <!-- card 2 -->
+          <div id="cashout-box" class=" p-5 border-2 border-gray-200 rounded-lg">
+            <img src="assets/send1.png" alt="" class="mx-auto">
+            <p class="text-gray-500 text-center">Cashout</p>
+          </div>
+          <!-- card 3 -->
+          <div id="transfer-box" class=" p-5 border-2 border-gray-200 rounded-lg">
+            <img src="assets/money1.png" alt="" class="mx-auto">
+            <p class="text-gray-500 text-center">Transfer Money</p>
+          </div>
+          <!-- card 4 -->
+          <div id="bonus-box" class=" p-5 border-2 border-gray-200 rounded-lg">
+            <img src="assets/bonus1.png" alt="" class="mx-auto">
+            <p class="text-gray-500 text-center">Get Bonus</p>
+          </div>
+          <!-- card 5 -->
+          <div id="pay-bill-box" class=" p-5 border-2 border-gray-200 rounded-lg">
+            <img src="assets/purse1.png" alt="" class="mx-auto">
+            <p class="text-gray-500 text-center">Pay Bill</p>
+          </div>
+          <!-- card 6 -->
+          <div id="transaction-box" class=" p-5 border-2 border-gray-200 rounded-lg">
+            <img src="assets/transaction1.png" alt="" class="mx-auto">
+            <p class="text-gray-500 text-center">Transactions</p>
+          </div>
+        </div>
+      </section>
+      <!-- Add Money -->
+      <section id="add-money" class="bg-gray-100 pt-6">
+        <h1>Add Money</h1>
+        <div class=" bg-base-200 ">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+              <form class="card-body">
+                <fieldset class="fieldset">
+
+                  <!-- select -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Select A Bank</label>
+                  <select id="select" class="select select-ghost rounded-3xl text-xs bg-gray-100">
+                    <option value="" selected disabled  >Select back</option>
+                    <option value="BKash">BKash</option>
+                    <option value="Nagad">Nagad</option>
+                    <option value="dbbl">DBBL</option>
+                  </select>
+
+                  <!-- account number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Mobile Number</label>
+                  <input id="account-number" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter 11 digit account number" value="01234567890" required />
+
+                  <!-- amount to add -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Amount to Add</label>
+                  <input id="amount" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Add Amount to withdraw" required />
+
+                  <!-- pin number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">4 Digit Pin</label>
+                  <input id="pin-number" type="" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter 4 Digit Pin" value="1234" required />
+
+                  <button id="add-money-btn" class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl">Add
+                    Money</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cash Out -->
+      <section id="cashout" class="bg-gray-100 pt-6">
+        <h1>Cash Out</h1>
+        <div class=" bg-base-200 ">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+              <form class="card-body">
+                <fieldset class="fieldset">
+
+                  <!-- account number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Mobile Number</label>
+                  <input id="cashout-accout" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter 11 digit account number" value="01234567890" required />
+
+                  <!-- amount to out -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Amount</label>
+                  <input id="cashout-amount" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter amount to withdraw" required />
+
+                  <!-- pin number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">4 Digit Pin</label>
+                  <input id="cashout-pin" type="" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter 4 digit pin number" value="1234" required />
+
+                  <button id="cashout-btn" class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl">Withdraw
+                    Money</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- transfer money -->
+      <section id="transfer" class="bg-gray-100 pt-6">
+        <h1>Transfer Money</h1>
+        <div class=" bg-base-200 ">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+              <form class="card-body">
+                <fieldset class="fieldset">
+
+                  <!-- account number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Mobile Number</label>
+                  <input id="account-number" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter 11 digit account number" value="01234567890" required />
+
+                  <!-- amount to out -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Amount to Add</label>
+                  <input id="amount" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter amount to withdraw" required />
+
+                  <!-- pin number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">4 Digit Pin</label>
+                  <input id="pin-number" type="" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter 4 digit pin number" value="1234" required />
+
+                  <button id="cashout-btn" class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl">Send
+                    Now</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Get Bonus -->
+      <section id="bonus" class="bg-gray-100 pt-6">
+        <h1>Get Bonus</h1>
+        <div class=" bg-base-200 ">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+              <form class="card-body">
+                <fieldset class="fieldset">
+
+                  <!-- pin number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Enter Bonus Coupon</label>
+                  <input id="pin-number" type="" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter your coupon" required />
+
+                  <button id="cashout-btn" class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl">Get
+                    Bonus</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pay Bill -->
+      <section id="pay-bill" class="bg-gray-100 pt-6">
+        <h1>Pay Bill</h1>
+        <div class=" bg-base-200 ">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+              <form class="card-body">
+                <fieldset class="fieldset">
+
+                  <!-- select -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Select To Pay</label>
+                  <select id="select-bill" class="select select-ghost rounded-3xl text-xs bg-gray-100">
+                    <option value="" disabled selected>Select Bill</option>
+                    <option value="Electricity Bill">Electricity Bill</option>
+                    <option value="Bank Deposit">Bank Deposit</option>
+                    <option value="Mobile Recharge">Mobile Recharge</option>
+                    <option value="Gas Bill">Gas Bill</option>
+                  </select>
+
+                  <!-- account number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Biller Account Number</label>
+                  <input id="bill-account-number" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter account number" value="01234567890" required />
+
+                  <!-- amount to add -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Amount to Pay</label>
+                  <input id="bill-amount" type="number" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Add Amount to pay" required />
+
+                  <!-- pin number -->
+                  <label class="fieldset-label text-slate-800 font-semibold">Pin Number</label>
+                  <input id="bill-pin-number" type="" class="input rounded-3xl text-xs bg-gray-100 border-0"
+                    placeholder="Enter 4 Digit Pin" value="1234" required />
+
+                  <button id="pay-bill-btn" class="btn btn-neutral mt-4 bg-blue-500 border-0 rounded-3xl">Pay
+                    Now</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transaction History -->
+      <section id="transaction" class="bg-gray-100 p-4" >
+        
+          <div class="flex justify-between">
+            <h1 class="text-2xl font-bold mb-4">Transaction history</h1>
+            <p id="view" class="text-gray-600 ">View All</p>
+          </div>
+
+        <div id="transaction-container" >
+          
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <script src="script/add-money.js"></script>
+  <script src="script/cashout.js"></script>
+  <script src="script/pay-bill.js"></script>
+  <script src="script/transfer.js"></script>
+  <script src="script/bonus.js"></script>
+  <script src="script/transaction.js"></script>
+  <script src="utilities/utilities.js"></script>
+  <script src="utilities/toggle.js"></script>
+</body>
+
+</html>
