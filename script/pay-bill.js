@@ -13,7 +13,8 @@ document.getElementById('pay-bill-btn').addEventListener('click' , function(even
     event.preventDefault()
     const account = document.getElementById('bill-account-number').value;
     const amount = getInputById('bill-pin-number');
-    const pin = getInputById('bill-pin-number');
+    const pin = document.getElementById('bill-pin-number').value;
+    const convertedPin = parseInt(pin);
     const balance = getInnerText('main-balance');
     const bill = document.getElementById('select-bill').value;
 
@@ -23,7 +24,7 @@ document.getElementById('pay-bill-btn').addEventListener('click' , function(even
 
     if (amount && pin && account && bill) {
         if (account.length === 11) {
-            if (pin === 1234) {
+            if (/^\d{4}$/.test(convertedPin)) {
                 if (amount > 0) {
                     const sub = balance - amount;
                     setInnerTextByIdAndValue('main-balance', sub)

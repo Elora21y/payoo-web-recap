@@ -12,14 +12,15 @@ document.getElementById('add-money-box').addEventListener('click', function (eve
 document.getElementById('add-money-btn').addEventListener('click', function (event) {
     event.preventDefault();
     const amount = getInputById("amount");
-    const pin = getInputById("pin-number");
+    const pin = document.getElementById('pin-number').value;
+    const convertedPin = parseInt(pin)
     const account = document.getElementById('account-number').value;
     const balance = getInnerText('main-balance');
     const selectBank = document.getElementById('select').value;
 
     if (amount && pin && account && selectBank) {
         if (account.length === 11) {
-            if (pin === 1234) {
+            if (/^\d{4}$/.test(convertedPin)) {
                 if (amount > 0) {
                     const sum = balance + amount;
                     setInnerTextByIdAndValue('main-balance', sum)
@@ -61,7 +62,7 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
 
     // amount && pin && account  && selectBank?
     //     account.length === 11 ?
-    //         pin === 1234 ?
+    //         /^\d{4}$/.test(convertedPin) ?
     //             setInnerTextByIdAndValue('main-balance', balance + amount) : alert('Invalid your pin')
     //         : alert('Incorrect your account number')
     //     : alert('Please fill all requirement');
